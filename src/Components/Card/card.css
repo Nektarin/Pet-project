@@ -1,0 +1,140 @@
+.card {
+  position: relative;
+  width: 317px;
+  height: 268px;
+  transition: 1s;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 22px;
+  line-height: 26px;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: translateY(10px);
+  -webkit-box-shadow: 0 8px 6px -6px rgb(93, 135, 148);
+  -moz-box-shadow: 0 8px 6px -6px rgb(93, 135, 148);
+  box-shadow: 0 8px 6px -6px rgb(93, 135, 148);
+}
+
+.front,
+.back {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+  flex-direction: column;
+  backface-visibility: hidden;
+
+  transition: transform 0.6s linear;
+
+  border-radius: 5px;
+  background-color: darkcyan;
+}
+
+.front {
+  transform: perspective(600px) rotateY(0deg);
+}
+
+.back {
+  transform: perspective(600px) rotateY(180deg);
+}
+
+.cover > .front {
+  transform: perspective(600px) rotateY(-180deg);
+}
+
+.cover > .back {
+  transform: perspective(600px) rotateY(0deg);
+}
+
+.card-img-section {
+  width: 100%;
+  height: 218px;
+}
+
+.card-img-section_full {
+  width: 100%;
+  height: 90%;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+
+  border-radius: 5px;
+}
+
+.bottom-block {
+  display: flex;
+  width: 100%;
+  height: 50px;
+
+  justify-content: start;
+  align-items: center;
+}
+
+.card-word-section {
+  display: flex;
+  width: 85%;
+  height: 50px;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.back .card-word-section {
+  width: 100%;
+}
+
+.card-turn-btn-block {
+  width: 50px;
+  height: 50px;
+}
+
+.turn-btn {
+  width: 100%;
+  height: 100%;
+
+  border: none;
+
+  background-image: url('rotate.svg');
+  background-color: brown;
+}
+
+.turn-btn:hover {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 320px) and (max-width: 640px) {
+  .card > * {
+    transform: scale(0.8);
+  }
+
+  .front,
+  .back {
+    transition: transform 0.6s linear scale(0.8);
+  }
+
+  .front {
+    transform: perspective(600px) rotateY(0deg) scale(0.8);
+  }
+
+  .back {
+    transform: perspective(600px) rotateY(180deg) scale(0.8);
+  }
+
+  .cover > .front {
+    transform: perspective(600px) rotateY(-180deg) scale(0.8);
+  }
+
+  .cover > .back {
+    transform: perspective(600px) rotateY(0deg) scale(0.8);
+  }
+}

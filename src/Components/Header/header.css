@@ -1,0 +1,170 @@
+.header {
+  display: flex;
+  width: 1440px;
+  height: 150px;
+
+  margin: 0 auto;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (min-width: 320px) and (max-width: 1441px) {
+  .header {
+    width: 100%;
+  }
+}
+
+/* https://codepen.io/designcouch/pen/Atyop */
+.burger-wrapper {
+  width: 60px;
+  height: 45px;
+  position: relative;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+
+  z-index: 100;
+}
+
+.burger-wrapper div {
+  display: block;
+  position: absolute;
+  height: 9px;
+  width: 100%;
+  background: #d3531a;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+.burger-wrapper div:nth-child(1) {
+  top: 0px;
+}
+
+.burger-wrapper div:nth-child(2) {
+  top: 18px;
+}
+
+.burger-wrapper div:nth-child(3) {
+  top: 36px;
+}
+
+.burger-wrapper.open div:nth-child(1) {
+  top: 18px;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+.burger-wrapper.open div:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+.burger-wrapper.open div:nth-child(3) {
+  top: 18px;
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+
+.switcher-wrapper {
+  display: flex;
+  width: 165px;
+  height: 34px;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+.game-mode-text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 28px;
+  color: rgb(25, 208, 214);
+  line-height: 26px;
+  text-transform: uppercase;
+}
+
+.game-mode-text:hover {
+  cursor: default;
+}
+
+/* https://www.w3schools.com/howto/howto_css_switch.asp */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(45px);
+  -ms-transform: translateX(45px);
+  transform: translateX(45px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}

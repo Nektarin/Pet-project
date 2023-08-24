@@ -1,0 +1,14 @@
+.status-bar {
+  display: flex;
+  width: 1440px;
+  height: fit-content;
+
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 320px) and (max-width: 1441px) {
+  .status-bar {
+    width: 100%;
+  }
+}
